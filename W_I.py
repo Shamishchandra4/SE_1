@@ -1,7 +1,8 @@
-temperature = float(input("Enter temperature (Celsius): "))
-humidity = float(input("Enter humidity (%): "))
-windspeed = float(input("Enter windspeed (km/h): "))
-
+with open("input.txt", "r") as file:
+    data = file.readline().strip().split(",")
+    temperature = float(data[0])
+    humidity = float(data[1])
+    windspeed = float(data[2])
 
 weather = 1.5 * temperature - 0.4 * humidity + 0.3 * windspeed - 10
 
@@ -14,4 +15,4 @@ elif 1000 < weather <= 2000:
 else:
     classification = "Stormy"
 
-print(f"Calculated weather: {weather} ({classification})")
+print(f"Input: {data} => Calculated weather: {weather} ({classification})")
