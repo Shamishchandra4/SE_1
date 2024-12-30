@@ -1,6 +1,7 @@
-temperature = 25  
-humidity = 70  
-windspeed = 15  
+temperature = float(input("Enter temperature (Celsius): "))
+humidity = float(input("Enter humidity (%): "))
+windspeed = float(input("Enter windspeed (km/h): "))
+
 
 weather = 1.5 * temperature - 0.4 * humidity + 0.3 * windspeed - 10
 
